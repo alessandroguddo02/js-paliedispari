@@ -4,7 +4,7 @@ Creare una funzione per capire se la parola inserita è palindroma
 */
 "use strict"
 console.clear();
-
+/*
 let userWord = prompt("inserisci una parola");
 console.log(userWord)
 
@@ -54,6 +54,10 @@ if (palidroma(userWord)) {
 
 
 
+*/
+
+
+
 
 /*
 Pari e Dispari
@@ -64,64 +68,44 @@ Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto.
 */
 
+let userNumber = parseInt(prompt("inserisci un numero da 1 a 5"));
+console.log(userNumber);
+let choice = prompt("scegli pari o dispari");
+console.log(choice);
 
+function randomNumber(min, max) {
 
-
-
-
-
-
-
-
-
-/**
- * Controlla se la parola e' palindroma
- * 
- * @param {string} word La parola da controllare
- * 
- * @return {boolean} true se palindroma, false viceversa
- */
-function palidroma(word) {
-    let verified;
-    let reversedword = "";
-
-    // parola == alorap FALSE
-    // osso == osso TRUE
-
-    for (let i = word.length - 1; i >= 0; i--) {
-        // osso
-        // 3210
-        console.log(word[i]);
-
-        // o
-        // s
-        // s
-        // o
-
-        // -------------------
-
-        // parola
-        // a 5
-        reversedword += word[i];
-        // reversedword = reversedword + word[i];
-        // l 4
-        // o 3
-        // r 2
-        // a 1
-        // p 0
-    }
-
-    console.log(reversedword);
-
-    if (reversedword === word) {
-        // si e' palindroma
-        verified = true;
-    } else {
-        // no non e' palindroma
-        verified = false;
-    }
-
-    console.log(verified);
-
-    return verified;
+    let random = Math.floor(Math.random() * (max - min + 1)) + min;
+    return random;
 }
+
+let randomPc = randomNumber(1, 5);
+console.log(randomPc)
+let somma = userNumber + randomPc;
+
+
+
+function evenOdd(somma) {
+    if (somma % 2 === 0) {
+        return "pari";
+    } else {
+        return "dispari"
+    }
+
+}
+
+let pariDispari = evenOdd(somma);
+
+if (pariDispari === choice) {
+    console.log("hai vinto")
+}else{
+    console.log("hai perso")
+}
+
+
+
+
+
+
+
+
